@@ -87,10 +87,10 @@ function calc_W!(integrator, cache::OrdinaryDiffEqConstantCache, dtgamma, repeat
   isarray = typeof(uprev) <: AbstractArray
   iscompo = typeof(integrator.alg) <: CompositeAlgorithm
   if !W_transform
-    J = DiffEqDiffTools.derivative(uf,uprev)
+    J = DiffEqDiffTools.finite_difference_derivative(uf,uprev)
     W = 1 - dtgamma*J
   else
-    J = DiffEqDiffTools.derivative(uf,uprev)
+    J = DiffEqDiffTools.finite_difference_derivative(uf,uprev)
     W = inv(dtgamma) - J
   end
   iscompo && (integrator.eigen_est = isarray ? norm(J, Inf) : J)
