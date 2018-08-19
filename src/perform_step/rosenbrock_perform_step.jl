@@ -172,7 +172,7 @@ end
 
   # Time derivative
   tf.u = uprev
-  dT = DiffEqDiffTools.derivative(tf,t)
+  dT = DiffEqDiffTools.finite_difference_derivative(tf,t)
 
   W = calc_W!(integrator, cache, γ, repeat_step)
 
@@ -416,7 +416,7 @@ end
 
   # Time derivative
   tf.u = uprev
-  dT = DiffEqDiffTools.derivative(tf,t)
+  dT = DiffEqDiffTools.finite_difference_derivative(tf,t)
 
   W = calc_W!(integrator, cache, dtgamma, repeat_step, true)
 
@@ -583,7 +583,7 @@ end
 
   # Time derivative
   tf.u = uprev
-  dT = DiffEqDiffTools.derivative(tf,t)
+  dT = DiffEqDiffTools.finite_difference_derivative(tf,t)
 
   W = calc_W!(integrator, cache, dtgamma, repeat_step, true)
 
@@ -760,7 +760,7 @@ end
 
   # Time derivative
   tf.u = uprev
-  dT = DiffEqDiffTools.derivative(tf,t)
+  dT = DiffEqDiffTools.finite_difference_derivative(tf,t)
 
   W = calc_W!(integrator, cache, dtgamma, repeat_step, true)
 
@@ -1025,7 +1025,7 @@ end
 
   # Time derivative
   tf.u = uprev
-  dT = DiffEqDiffTools.derivative(tf,t)
+  dT = DiffEqDiffTools.finite_difference_derivative(tf,t)
 
   W = calc_W!(integrator, cache, dtgamma, repeat_step, true)
 
