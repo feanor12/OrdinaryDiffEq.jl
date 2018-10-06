@@ -32,6 +32,27 @@ end
   integrator.k[2] = integrator.fsallast
 end
 
+function initialize!(integrator,cache::NumerovCache)
+
+  println("####1")
+end
+
+function perform_step!(integrator, cache::NumerovCache,
+                      repeat_step=false)
+  println("####1p")
+end
+
+function initialize!(integrator,cache::NumerovConstantCache)
+
+  println("####2")
+end
+
+function perform_step!(integrator, cache::NumerovConstantCache,
+                      repeat_step=false)
+  println("####2p")
+end
+
+
 function initialize!(integrator,cache::SymplecticEulerCache)
   integrator.kshortsize = 2
   @unpack k,fsalfirst = cache

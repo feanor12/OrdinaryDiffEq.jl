@@ -17,6 +17,22 @@ struct SymplecticEulerConstantCache <: OrdinaryDiffEqConstantCache end
 
 alg_cache(alg::SymplecticEuler,u,rate_prototype,uEltypeNoUnits,uBottomEltypeNoUnits,tTypeNoUnits,uprev,uprev2,f,t,dt,reltol,p,calck,::Type{Val{false}}) = SymplecticEulerConstantCache()
 
+
+struct NumerovCache <: OrdinaryDiffEqMutableCache
+end
+
+alg_cache(alg::Numerov,u,rate_prototype,uEltypeNoUnits,uBottomEltypeNoUnits,tTypeNoUnits,uprev,uprev2,f,t,dt,reltol,p,calck,::Type{Val{true}}) = NumerovCache()
+
+u_cache(c::NumerovCache) = ()
+du_cache(c::NumerovCache) = ()
+
+struct NumerovConstantCache <: OrdinaryDiffEqConstantCache
+end
+
+alg_cache(alg::Numerov,u,rate_prototype,uEltypeNoUnits,uBottomEltypeNoUnits,tTypeNoUnits,uprev,uprev2,f,t,dt,reltol,p,calck,::Type{Val{false}}) = NumerovConstantCache()
+
+
+
 struct VelocityVerletCache{uType,rateType,uEltypeNoUnits} <: OrdinaryDiffEqMutableCache
   u::uType
   uprev::uType

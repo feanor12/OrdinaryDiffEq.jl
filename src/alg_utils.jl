@@ -10,6 +10,7 @@ isfsal(alg::Rodas4P) = false
 isfsal(alg::Vern7) = false
 isfsal(alg::Vern8) = false
 isfsal(alg::Vern9) = false
+isfsal(alg::Numerov) = false
 get_current_isfsal(alg, cache) = isfsal(alg)
 get_current_isfsal(alg::CompositeAlgorithm, cache) = isfsal(alg.algs[cache.current])
 
@@ -141,6 +142,7 @@ alg_order(alg::KahanLi6) = 6
 alg_order(alg::McAte8) = 8
 alg_order(alg::KahanLi8) = 8
 alg_order(alg::SofSpa10) = 10
+alg_order(alg::Numerov)=4
 
 alg_order(alg::IRKN3) = 3
 alg_order(alg::Nystrom4) = 4

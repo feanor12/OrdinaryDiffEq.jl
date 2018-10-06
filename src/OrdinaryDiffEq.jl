@@ -176,7 +176,7 @@ module OrdinaryDiffEq
 
   export SymplecticEuler, VelocityVerlet, VerletLeapfrog, PseudoVerletLeapfrog,
          McAte2, Ruth3, McAte3, CandyRoz4, McAte4, McAte42, McAte5,
-         CalvoSanz4, Yoshida6, KahanLi6, McAte8, KahanLi8, SofSpa10
+         CalvoSanz4, Yoshida6, KahanLi6, McAte8, KahanLi8, SofSpa10, Numerov
 
   export SplitEuler
 

@@ -147,6 +147,7 @@ struct KahanLi6 <: OrdinaryDiffEqAlgorithm end
 struct McAte8 <: OrdinaryDiffEqAlgorithm end
 struct KahanLi8 <: OrdinaryDiffEqAlgorithm end
 struct SofSpa10 <: OrdinaryDiffEqAlgorithm end
+struct Numerov <: OrdinaryDiffEqAlgorithm end
 
 # Nyström methods
 

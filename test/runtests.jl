@@ -31,6 +31,14 @@ macro testset_module(name, expr)
 end
 
 #Start Test Script
+#
+@time begin
+  if group == "Numerov" 
+    @time @testset_module "Numerov Tests" begin
+      include("./ode/ode_numerov_tests.jl")
+    end
+  end
+end
 
 @time begin
 if group == "All" || group == "Interface"
